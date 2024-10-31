@@ -3,7 +3,7 @@ import streamlit as st
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://samyvilhes:Rt8qTQwzkN6ev5pN@cluster0.4mrsu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = "mongodb+srv://" + st.secrets["mongodb"]["username"] + ":" + st.secrets["mongodb"]["password"] + "@cluster0.4mrsu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
